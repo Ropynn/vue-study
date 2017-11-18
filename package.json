@@ -28,6 +28,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "mint-ui": "^2.2.10",
     "mui": "git+https://github.com/dcloudio/mui.git",
     "vue": "^2.5.4",
