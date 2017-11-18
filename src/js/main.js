@@ -1,31 +1,27 @@
-//要把组件渲染到页面中，我们就必须要导入vue这个库,然后才可以new他
-//es6语法导入的vue与我们在浏览器中使用的vue有点小区别，失去了浏览器模板编译功能
-//失去该功能的原因是，你使用es6语法，vue知道你一定用了构建工具，那么使用狗就按工具
-//你应该会使用vue-loader，使用了vue-loader他会在本地打包时把模板编译好，
-//然后在浏览器中直接使用编译好的模板，相比咱们以往的方式，性能有所提升
-
-//导入第三方包
+// from后面的路径, 如果含有./ ../那么就相对于当前文件找文件
+// 如果没有, 那么就会去node_modules里面找对应的包
+//1.1导入第三方包
 import Vue from "Vue";
 import MintUi from "mint-ui";
 import "mint-ui/lib/style.css";
-import Common from "../component/common";
+import Common from "../component/common";  //自动找到index.js引入
 import "mui/dist/css/mui.css";
 import "mui/examples/hello-mui/css/icons-extra.css";
 import axios from 'axios';
-
 import VueRouter from "vue-router";
-//自动找到index文件
 
-//手动启用vue插件，在以前VueRouter插件会自动调用use，
-//但是我们使用了模块化之后，window下没有vue全局变量，插件就无法自调use了
-
+//1.2 启用vue插件
 Vue.use(VueRouter);
 Vue.use(MintUi);
 Vue.use(Common);
-Vue.prototype.axios = axios;
 
-//导入我们编写的组件
+Vue.prototype.axios = axios; // 把axios库放置到原型, 将来其他组件直接可以拿到axios对象
+
+// 2.1 导入根组件
 import AppComponent from "../component/App.vue";
+
+//2.2 导入配置
+import routerConfig from '../router';   // 自动找到index.js引入
 
 new Vue({
   el: "#app",
@@ -33,9 +29,5 @@ new Vue({
     console.log(this.axios);
     return createNode(AppComponent);
   },
-  router: new VueRouter({
-    routes: [
-      { path: "/", component: AppComponent },
-    ]
-  })
+  router: new VueRouter(routerConfig)
 });

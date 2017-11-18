@@ -3,9 +3,9 @@
     <!-- 轮播图 -->
       <mt-swipe :auto="4000">
             <mt-swipe-item v-for='item in lunbos' v-bind:key="item.url">
-                <a :href="item.url">
+                <router-link :to="item.url">
                     <img :src="item.img">
-                </a>
+                </router-link>
             </mt-swipe-item>
         </mt-swipe>
         <!-- 六宫格 -->
