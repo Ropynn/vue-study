@@ -7,6 +7,7 @@
 //导入第三方包
 import Vue from "Vue";
 import VueRouter from "vue-router";
+import MintUi from "mint-ui";
 
 //手动启用vue插件，在以前VueRouter插件会自动调用use，
 //但是我们使用了模块化之后，window下没有vue全局变量，插件就无法自调use了
@@ -20,7 +21,7 @@ import Photo from "../component/photo/photo.vue";
 
 new Vue({
   el: "#app",
-  //以前这里写的是template与methods等等东西，现在这些代码都统一放在了App.vue里面来写
+  //以前这里写的是 template与 methods等等东西，现在这些代码都统一放在了App.vue里面来写
   //App.vue就是咱们项目中的根文件
   render: function(c) {
     return c(App);
