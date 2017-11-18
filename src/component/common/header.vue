@@ -10,5 +10,6 @@
   i{
     display: block;
     height: 40px;
+
   }
 </style>
