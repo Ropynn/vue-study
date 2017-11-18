@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "mint-ui": "^2.2.10",
+    "mui": "git+https://github.com/dcloudio/mui.git",
     "vue": "^2.5.4",
     "vue-router": "^3.0.1"
   }
