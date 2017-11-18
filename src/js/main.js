@@ -6,32 +6,24 @@
 
 //导入第三方包
 import Vue from "Vue";
-import VueRouter from "vue-router";
 import MintUi from "mint-ui";
+import 'mint-ui/lib/style.css';
+import Common from '../component/common';
+  //自动找到index文件
 
 //手动启用vue插件，在以前VueRouter插件会自动调用use，
 //但是我们使用了模块化之后，window下没有vue全局变量，插件就无法自调use了
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
+Vue.use(MintUi);
+Vue.use(Common);
 
 //导入我们编写的组件
-import App from "../component/App.vue";
-import Home from "../component/home/home.vue";
-import News from "../component/news/news.vue";
-import Photo from "../component/photo/photo.vue";
+import AppComponent from "../component/App.vue";
+
 
 new Vue({
   el: "#app",
-  //以前这里写的是 template与 methods等等东西，现在这些代码都统一放在了App.vue里面来写
-  //App.vue就是咱们项目中的根文件
-  render: function(c) {
-    return c(App);
-  },
-  //路由配置
-  router: new VueRouter({
-    routes: [
-      { path: "/", component: Home },
-      { path: "/news", component: News },
-      { path: "/photo", component: Photo }
-    ]
-  })
+  render(createNode) {
+    return createNode(AppComponent);
+  }
 });
