@@ -60,8 +60,7 @@ export default {
   methods: {
     //请求数据，成功后把数据储存到lunbos里面
     getLunbo() {
-      this.axios
-        .get("http://vue.studyit.io/api/getlunbo")
+      this.axios.get(this.api.getLunbo)
         .then(resp => (this.lunbos = resp.data.message));
     }
   },

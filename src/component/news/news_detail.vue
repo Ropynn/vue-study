@@ -1,6 +1,6 @@
 <template>
   <div>
-    新闻详情
+    <p></p>
   </div>
 </template>
 
