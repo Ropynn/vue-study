@@ -11,6 +11,9 @@ export default {
 
     //新闻路由配置
     { name: "nl", path: "/news/list", component: NewsListComponent },
-    { name: "nd", path: "/news/detail:id", component: NewsDetailComponent }
+    { name: "nd", path: "/news/detail/:id", component: NewsDetailComponent },
+    
+    //图片路由配置
+    
   ]
 };

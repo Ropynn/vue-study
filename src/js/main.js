@@ -9,11 +9,13 @@ import "mui/dist/css/mui.css";
 import "mui/examples/hello-mui/css/icons-extra.css";
 import axios from 'axios';
 import VueRouter from "vue-router";
+import dateFilter from '../filter';
 
 //1.2 启用vue插件
 Vue.use(VueRouter);
 Vue.use(MintUi);
 Vue.use(Common);
+Vue.use(dateFilter);
 
 Vue.prototype.axios = axios; // 把axios库放置到原型, 将来其他组件直接可以拿到axios对象
 Vue.prototype.api = apiConfig;
